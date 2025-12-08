@@ -31,7 +31,7 @@ class PostViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
     
     def get_statistics():
-        stats=cache.get('my_stats_keys')
+        stats=cache.get('my_stats_key')
         if not stats:
             print('Complex process...')
             count=Post.objects.count()

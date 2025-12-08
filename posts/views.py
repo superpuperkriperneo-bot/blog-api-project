@@ -40,8 +40,7 @@ class PostViewSet(viewsets.ModelViewSet):
         return stats
 
     # def perform_create(self, serializer):
-    #     serializer.save(author=self.request.user)
-
+        # serializer.save(author=self.request.user)
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset=Category.objects.all()

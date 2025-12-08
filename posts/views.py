@@ -39,8 +39,8 @@ class PostViewSet(viewsets.ModelViewSet):
             cache.set('my_stats_key', stats, 60*60)
         return stats
 
-    def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+    # def perform_create(self, serializer):
+    #     serializer.save(author=self.request.user)
 
 
 class CategoryViewSet(viewsets.ModelViewSet):

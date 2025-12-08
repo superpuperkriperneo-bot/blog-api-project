@@ -15,3 +15,6 @@ db.sqlite3
 # IDE sazlawlari
 .idea/
 .vscode/
+
+# static fayllar
+staticfiles/

@@ -1,0 +1,17 @@
+# Virtual ortaliq
+.venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Mag'lumatlar bazasi fayllari
+db.sqlite3
+
+# Sir mag'lumatlar
+.env
+
+# IDE sazlawlari
+.idea/
+.vscode/

@@ -1,6 +1,6 @@
 # Virtual ortaliq
 .venv/
-env/
+.env/
 
 # Python cache files
 __pycache__/

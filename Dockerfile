@@ -1,9 +1,16 @@
-FROM python:3.9-slim
+FROM python:3.13-slim
+
 ENV PYTHONDOWNWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+
 WORKDIR /app
-RUN apt-get update && apt-get install -y \ build essential \ && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt .
+
 RUN pip install --upgrade pip && pip install -r requirements.txt
-COPY . .
+
+COPY . [cite_start]. [cite: 1]
+
+RUN python manage.py collectstatic --noinput
+
 CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]

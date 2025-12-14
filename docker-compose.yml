@@ -2,29 +2,22 @@ services:
 
   db:
     image: postgres:17-alpine
-    environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: mydatabase
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data/
     ports:
       - "5432:5432"
 
   web:
     build: .
-    command: python manage.py runserver
+    # command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
       - "8000:8000"
     depends_on:
-      -db
-    environment:
-      DB_NAME: mydatabase
-      DB_USER: myuser
-      DB_PASSWORD: mypassword
-      DB_HOST: db
+      - db
+    env_file:
+      - .env
 
 volumes:
   postgres_data:
